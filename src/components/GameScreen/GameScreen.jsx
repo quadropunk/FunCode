@@ -1,79 +1,12 @@
 import './GameScreen.css';
 
 const GameScreen = ({style}) => {
-    const steps = [
-        {
-            id:1,
-            left:'280px',
-            bottom:''
-        },
-        {
-            id:2,
-            left:'280px',
-            bottom:'100px'
-        },
-        {
-            id:3,
-            left:'425px',
-            bottom:'100px'
-        },
-        {
-            id:4,
-            left:'400px',
-            bottom:'170px'
-        },
-        {
-            id:5,
-            left:'545px',
-            bottom:'170px'
-        },
-        {
-            id:6,
-            left:'545px',
-            bottom:'240px'
-        },
-        {
-            id:6,
-            left:'690px',
-            bottom:'220px'
-        },
-        {
-            id:7,
-            left:'690px',
-            bottom:'280px'
-        },
-        {
-            id:8,
-            left:'700px',
-            bottom:'345px'
-        },
-        {
-            id:9,
-            left:'710px',
-            bottom:'370px'
-        },
-        
-    ]
-
-    const runCode = (e) => {
-        e.preventDefault();
-        const char = document.getElementById('char');
-        
-        for(let i = 0; i < steps.length;i++) {
-            setTimeout(() => {
-              char.style.left = steps[i].left;
-              char.style.bottom = steps[i].bottom;
-            }, i * 500);
-        }   
-
-    }
-
-   
+    
 
 
     return (
         <div className='game-screen-cont' style={style}>
-            <div className='game-character' onClick={runCode} id="char">
+            <div className='game-character' id="char">
                 <img src={require('../../media/main_char.png')}  alt="your character"/>
             </div>
             <div className='game-ice-row1 ice'>
@@ -104,3 +37,69 @@ const GameScreen = ({style}) => {
 }
 
 export default GameScreen;
+
+
+/*
+const steps = [
+    {
+        id:1,
+        left:'145px',
+        bottom:'',
+        code:'Hero.moveRight()'
+    },
+    {
+        id:2,
+        left:'280px',
+        bottom:'',
+        code:'Hero.moveRight()'
+    },
+    {
+        id:3,
+        left:'280px',
+        bottom:'100px',
+        code:'Hero.moveUp()'
+    },
+    {
+        id:4,
+        left:'400px',
+        bottom:'100px',
+        code:'Hero.moveRight()'
+    },
+    {
+        id:5,
+        left:'380px',
+        bottom:'170px',
+        code:'Hero.moveUp()'
+    },
+    {
+        id:6,
+        left:'530px',
+        bottom:'170px',
+        code:'Hero.moveRight()'
+    },
+    {
+        id:6,
+        left:'690px',
+        bottom:'220px',
+        code:'Hero.moveUp()'
+    },
+    {
+        id:7,
+        left:'690px',
+        bottom:'280px',
+        code:'Hero.moveRight()'
+    },
+    {
+        id:8,
+        left:'700px',
+        bottom:'345px',
+        code:'Hero.moveUp()'
+    },
+    {
+        id:9,
+        left:'710px',
+        bottom:'370px',
+        code:'Hero.moveUp()'
+    },
+    
+]*/

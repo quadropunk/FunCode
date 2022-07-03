@@ -71,7 +71,7 @@
 .game-character {
     position: absolute;
     bottom: 18px;
-    left: 10%;
+    left: 0;
     z-index: 1111111111;
 }
 
