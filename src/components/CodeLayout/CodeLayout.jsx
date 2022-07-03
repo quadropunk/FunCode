@@ -8,7 +8,7 @@ const CodeLayout = () => {
                 Code:
             </BlueRadiusText>
             
-            <textarea className='code-editor-cont'>
+            <textarea id="editor" className='code-editor-cont'>
 
             </textarea>
         </div>
