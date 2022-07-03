@@ -20,3 +20,20 @@
     min-width: 40%;
     padding: 20px;
 }
+
+
+.notification-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(29, 142, 248);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    z-index: 1111111111111111;
+    height: 200px;
+    width: 300px;
+}
