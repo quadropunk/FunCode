@@ -1,9 +1,33 @@
 import './Hints.css';
 
-const Hints = () => {
+const Hints = ({style}) => {
     return (
-        <div>
-
+        <div className='hints-panel-cont'>
+            <div className='hints-label-cont'>
+                <h1>Hints</h1>
+            </div>
+            <div className='hints-list-cont'>
+                <div className='hints-img'>
+                    <img alt="hint" src={'https://cdn2.iconfinder.com/data/icons/dual-stroke-part-three/64/lightbulb-light-idea-energy-128.png'} />
+                </div>
+                <div className='hints-list'>
+                    <ul>
+                        <li>
+                            Hero.moveDown() - moves one step down
+                        </li>
+                        <li>
+                            Hero.moveUp() - moves one step up
+                        </li>
+                        <li>
+                            Hero.moveRight() - moves one step right
+                        </li>
+                        <li>
+                            Hero.moveLeft() - moves one step left
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }
