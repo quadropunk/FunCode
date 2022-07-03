@@ -4,7 +4,6 @@
     width: 100%;
     min-width: 100%;
     display: flex;
-    flex-direction: column;
 }
 
 .game-play-part-cont {
@@ -12,4 +11,12 @@
     min-width: 60%;
     max-width: 60%;
     border: 1px solid;
+}
+
+.game-code-part-cont {
+    min-height: 100%;
+    height: 100%;
+    max-width: 40%;
+    min-width: 40%;
+    padding: 20px;
 }

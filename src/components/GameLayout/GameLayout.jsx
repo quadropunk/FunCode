@@ -27,7 +27,7 @@ const GameLayout = ({style}) => {
             </div>
             <div className='game-code-part-cont'>
                 <Mission style={{
-
+                    
                 }}
                 
                 />
