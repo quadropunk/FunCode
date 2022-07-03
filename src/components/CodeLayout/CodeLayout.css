@@ -1,0 +1,21 @@
+.code-layout {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    height: 70%;
+}
+
+.code-layout .code-editor-cont {
+    outline: none;
+    border-width: 1px;
+    background: #fff;
+    width: 100%;
+    margin: 0 20px 0 0;
+    height: 100%;
+    border-radius: 5px;
+    border-color: #555;
+    font-family: "Source Code Pro", monospace;
+    font-size: 1em;
+    resize: none;
+    padding: 5px;
+}
