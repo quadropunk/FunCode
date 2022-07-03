@@ -4,16 +4,16 @@ const ControlLayoutMenu = ({style}) => {
     return (
         <div className='control-layout-menu-cont'>
             <div className='control-menu-item stop'>
-                <p>Stop</p>
-            </div>
-            <div className='control-menu-item run'>
                 <p>Run</p>
             </div>
+            <div className='control-menu-item run'>
+                <p>Stop</p>
+            </div>
             <div className='control-menu-item resume'>
-                <p>Resume</p>
+                <p>Reset</p>
             </div>
             <div className='control-menu-item reset'>
-                <p>Reset</p>
+                <p>Menu</p>
             </div>
         </div>
     )
