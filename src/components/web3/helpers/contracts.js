@@ -1,4 +1,4 @@
-import Web3 from "web3";
+import Web3 from "web3/dist/web3.min.js";
 
 const CHARACTER_NFT_ABI = require("../abi/character.json").abi;
 const COIN_ABI = require("../abi/coin.json").abi;
