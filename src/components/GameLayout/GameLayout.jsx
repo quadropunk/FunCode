@@ -4,8 +4,11 @@ import Mission from '../Mission/Mission';
 import CodeLayout from '../CodeLayout/CodeLayout';
 import './GameLayout.css';
 import ControlLayoutMenu from '../ControlLayoutMenu/ControlLayoutMenu';
+import { useState } from 'react';
 
 const GameLayout = ({style}) => {
+    
+    
     return(
         <div className="game-layout-cont" style={style}>
             <div className='game-play-part-cont'>
