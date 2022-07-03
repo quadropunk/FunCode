@@ -26,8 +26,8 @@ export async function symbol() {
     return characterNftContract().then(async (token) => await token.methods.symbol().call());
 }
 
-export async function tokenUri(tokenId) {
-    return characterNftContract().then(async (token) => await token.methods.tokenUri(tokenId).call());
+export async function tokenURI(tokenId) {
+    return characterNftContract().then(async (token) => await token.methods.tokenURI(tokenId).call());
 }
 
 /*======================================\
