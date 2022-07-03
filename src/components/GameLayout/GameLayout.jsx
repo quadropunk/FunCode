@@ -13,7 +13,7 @@ const GameLayout = ({style}) => {
 
                 }}
                 />
-
+                <br/>
                 <ControlLayoutMenu style={{
                     
                 }}

@@ -1,5 +1,82 @@
 .game-screen-cont {
     background: beige;
-    height: 65%;
+    height: 64%;
     width: 100%;
+    background: url('../../media/bgGameStart.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.ice img {
+    height: 45px;
+    width: 145px;
+}
+
+
+.game-ice-row1 {
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    display: flex;
+    width: 270px;
+    justify-content: space-around;
+}
+
+.game-ice-row2 {
+    position: absolute;
+    bottom: 80px;
+    left: 25%;
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+
+.game-ice-row3 {
+    position: absolute;
+    bottom: 150px;
+    left: 35%;
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+
+.game-ice-row4 {
+    position: absolute;
+    bottom: 220px;
+    left: 53%;
+    display: flex;
+    width: 270px;
+    justify-content: space-around;
+}
+
+.game-ice-row5 {
+    position: absolute;
+    bottom: 270px;
+    left: 68%;
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+}
+
+.game-ice-row6 {
+    position: absolute;
+    bottom: 320px;
+    left: 72%;
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+}
+
+.game-character {
+    position: absolute;
+    bottom: 18px;
+    left: 10%;
+    z-index: 1111111111;
+}
+
+.game-character img {
+    height: 100px;
+    width: 70px;
+    z-index: 1111111111;
 }
