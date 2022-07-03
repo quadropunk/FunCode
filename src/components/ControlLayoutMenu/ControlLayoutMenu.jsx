@@ -1,9 +1,10 @@
+
 import './ControlLayoutMenu.css';
 
-const ControlLayoutMenu = ({style}) => {
+const ControlLayoutMenu = ({style, run}) => {
     return (
-        <div className='control-layout-menu-cont'>
-            <div className='control-menu-item stop'>
+        <div className='control-layout-menu-cont' style={style}>
+            <div className='control-menu-item stop' onClick={run}>
                 <p>Run</p>
             </div>
             <div className='control-menu-item run'>
