@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "hardhat": "^2.9.9"
+    "hardhat": "^2.9.9",
+    "web3": "^1.7.4"
   }
 }
