@@ -1,9 +1,9 @@
 import './GameScreen.css';
 
-const GameScreen = () => {
+const GameScreen = ({style}) => {
     return (
-        <div>
-
+        <div className='game-screen-cont' style={style}>
+                
         </div>
     )
 }
