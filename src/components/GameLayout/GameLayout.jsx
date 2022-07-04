@@ -4,19 +4,42 @@ import Mission from '../Mission/Mission';
 import CodeLayout from '../CodeLayout/CodeLayout';
 import './GameLayout.css';
 import ControlLayoutMenu from '../ControlLayoutMenu/ControlLayoutMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 
 const GameLayout = ({style}) => {
     const [code, setCode] = useState(``);
+    const [lives, setLives] = useState([1,1,1]);
+    const [time, setTime] = useState(0);
 
     const saveCode = (code) => {
         setCode(code);
     }
 
     const [gameStatus, setGameStatus] = useState({finished:false, msg:''});
- 
+    
 
+    let timerID
+    useEffect(() => {
+        if(!gameStatus.finished) {
+            timerID = setInterval( () => tick(), 1000);
+            return function cleanup() {
+                clearInterval(timerID);
+            };
+        } else {
+            return
+        }
+        
+       
+    })
+
+    function cleanup() {
+        clearInterval(timerID);
+    };
+
+   function tick() {
+    setTime(prev => prev + 1);
+   }
 
     const commands = [
         'Hero.moveUp()',
@@ -38,14 +61,46 @@ const GameLayout = ({style}) => {
             })
             if(out) {
                 setTimeout(() => {
-                    setGameStatus({finished:true, msg:'Game over!Try again'})
-                    char.style.display = "none";
+                    if(lives[2] == 1) {
+                        setTimeout(() => {
+                            char.style.left = "0px";
+                            char.style.bottom="30px";
+                            
+                            setGameStatus({finished:true, msg:'Try again'})
+                            setTimeout(() => {
+                                setGameStatus({finished:false, msg:''})
+                            }, 1000);
+                            setLives([1,1,0]);
+                        }, 1000);
+                    } else if(lives[1] == 1) {
+                        console.log('hello')
+                        setTimeout(() => {
+                            char.style.left = "0px";
+                    char.style.bottom="30px";
+                            
+                    setLives([1,0,0]);
+
+                            setGameStatus({finished:true, msg:'Try again'})
+                            setTimeout(() => {
+                                setGameStatus({finished:false, msg:''})
+                            }, 1000);
+                        }, 1000);
+                    } else if(lives[0] == 1) {
+                        setTimeout(() => {
+                            setLives([0,0,0]);
+                            cleanup(timerID)
+                            char.style.display="none";
+                            setGameStatus({finished:true, msg:'Game over!Try again'})
+                        }, 1000);
+                        
+                    }
+
                 }, 2500)
                 
             }
         }
 
-        if(codes.length === 10) {
+        if(codes.length >= 10) {
             setTimeout(() => {
                 setGameStatus({finished:true, msg:'You win!'})
             }, 9000);
@@ -106,9 +161,9 @@ const GameLayout = ({style}) => {
            
         
             <div className='game-play-part-cont'>
-            <Header level={1}/>
+            <Header level={1} lives={lives} time={time}/>
                {gameStatus.finished &&  <div className='notification-cont'>
-                <p>The End</p>
+                <p>FunCode</p>
                 <br/>
                 <h1>{gameStatus.msg}</h1>
                 <br/>

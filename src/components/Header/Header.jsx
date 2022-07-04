@@ -1,21 +1,26 @@
 import './Header.css';
 
-const Header = ({level}) => {
+const Header = ({level, lives, time}) => {
     return(
         <div className="header-container">
-            <div className="level-name">
+            <div className="level-name" style={{
+                paddingLeft:'20px',
+                fontSize:'25px'
+            }}>
                     Level {level}
             </div>
             <div className="data-cont">
                 <div className="time-cont data-item">
                     <img src={'https://cdn4.iconfinder.com/data/icons/epic-outlines/30/timer-128.png'} />
-                    <p>0:05</p>
+                    <p> {Math.floor(time / 60) } : {time % 60 < 10 ? (0 + "" + (time % 60)) : time%60} </p>
                 </div>
                 <div className="lives-cont data-item">
                     <div className='lives-lives'>
-                     <img src={'https://cdn3.iconfinder.com/data/icons/object-emoji/50/Heart-128.png'} />
-                     <img src={'https://cdn3.iconfinder.com/data/icons/object-emoji/50/Heart-128.png'} />
-                     <img src={'https://cdn3.iconfinder.com/data/icons/object-emoji/50/Heart-128.png'} />
+                     {lives.map((i,key) => {
+                        return  <img key={key} alt={i} src={i == 1 ? 'https://cdn3.iconfinder.com/data/icons/object-emoji/50/Heart-128.png' :
+                        'https://cdn1.iconfinder.com/data/icons/modern-universal/32/icon-19-128.png'
+                    } />
+                     })}
                     </div>
                 </div>
                 <div className="coin-cont data-item">
