@@ -17,20 +17,21 @@
 
 .control-menu-item p {
     font-size: 20px;
+    color:white;
 }
 
 .stop {
-    background: rgb(221, 30, 221);
+    background: rgb(236, 36, 192);
 }
 
 .run {
-    background: rgb(230, 230, 52);
+    background: rgb(243, 169, 11);
 }
 
 .resume {
-    background: rgb(131, 131, 239);
+    background: rgb(71, 71, 218);
 }
 
 .reset {
-    background: rgb(56, 147, 216);
+    background: rgb(23, 134, 186);
 }

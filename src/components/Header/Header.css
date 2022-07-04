@@ -1,0 +1,60 @@
+.header-container {
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+    background: white;
+    max-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-cont {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.time-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 33%;
+}
+
+.data-item img {
+    height: 20%;
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+.lives-cont {
+    width: 20%;
+    height: 100%;
+}
+
+.lives-cont .lives-lives {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.lives-lives img {
+    height: 50%;
+    width: 50%;
+}
+
+.coin-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 10px;
+}

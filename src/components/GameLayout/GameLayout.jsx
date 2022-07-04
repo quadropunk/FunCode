@@ -5,6 +5,7 @@ import CodeLayout from '../CodeLayout/CodeLayout';
 import './GameLayout.css';
 import ControlLayoutMenu from '../ControlLayoutMenu/ControlLayoutMenu';
 import { useState } from 'react';
+import Header from '../Header/Header';
 
 const GameLayout = ({style}) => {
     const [code, setCode] = useState(``);
@@ -103,8 +104,9 @@ const GameLayout = ({style}) => {
     return(
         <div className="game-layout-cont" style={style}>
            
-            
+        
             <div className='game-play-part-cont'>
+            <Header level={1}/>
                {gameStatus.finished &&  <div className='notification-cont'>
                 <p>The End</p>
                 <br/>
