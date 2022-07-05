@@ -1,7 +1,8 @@
+import {NavLink} from 'react-router-dom';
 
 import './ControlLayoutMenu.css';
 
-const ControlLayoutMenu = ({style, run}) => {
+const ControlLayoutMenu = ({style, run, loseCode}) => {
     return (
         <div className='control-layout-menu-cont' style={style}>
             <div className='control-menu-item stop' onClick={run}>
@@ -11,10 +12,13 @@ const ControlLayoutMenu = ({style, run}) => {
                 <p>Stop</p>
             </div>
             <div className='control-menu-item resume'>
-                <p>Reset</p>
+                <p onClick={loseCode}>Reset</p>
             </div>
             <div className='control-menu-item reset'>
-                <p>Menu</p>
+                <p>
+                    <NavLink to={'/'}>
+                        Menu
+                    </NavLink></p>
             </div>
         </div>
     )

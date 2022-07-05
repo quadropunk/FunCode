@@ -16,7 +16,9 @@ const GameLayout = ({style}) => {
     const saveCode = (code) => {
         setCode(code);
     }
-
+    const loseCode = () => {
+        setCode('');
+    }
     const [gameStatus, setGameStatus] = useState({finished:false, msg:''});
     
 
@@ -185,6 +187,7 @@ const GameLayout = ({style}) => {
                 <br/>
                 <ControlLayoutMenu style={{}}
                     run={processCode}
+                    loseCode={loseCode}
                 />
 
                 <Hints style={{}}
@@ -200,6 +203,7 @@ const GameLayout = ({style}) => {
                 <CodeLayout style={{
 
                 }}
+                code={code}
                 saveCode={saveCode}
                 />
             </div>

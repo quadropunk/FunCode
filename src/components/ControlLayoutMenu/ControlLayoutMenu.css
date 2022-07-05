@@ -3,6 +3,7 @@
     height: 40px;
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
 }
 
 .control-menu-item {
@@ -13,8 +14,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
-
+.control-menu-item a  {
+    background: none;
+    font-size: 20px;
+    color:white;
+}
 .control-menu-item p {
     font-size: 20px;
     color:white;

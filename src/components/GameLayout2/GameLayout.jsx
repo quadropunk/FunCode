@@ -34,6 +34,10 @@ const GameLayout2 = ({style}) => {
        
     })
 
+    const loseCode = () => {
+        setCode('');
+    }
+
     function cleanup() {
         clearInterval(timerID);
     };
@@ -185,6 +189,7 @@ const GameLayout2 = ({style}) => {
                 <br/>
                 <ControlLayoutMenu style={{}}
                     run={processCode}
+                    loseCode={loseCode}
                 />
 
                 <Hints style={{}}
@@ -200,6 +205,7 @@ const GameLayout2 = ({style}) => {
                 <CodeLayout style={{
 
                 }}
+                code={code}
                 saveCode={saveCode}
                 />
             </div>
