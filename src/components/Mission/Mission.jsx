@@ -15,7 +15,8 @@ const Mission = () => {
                 <div className='hints-list'>
                     <ul>
                         <li>
-                            Go to the left corner
+                            Go to the right top corner
+                            and get the treasure!
                         </li>
                         
                         

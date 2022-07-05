@@ -8,6 +8,13 @@
     position: relative;
 }
 
+.level2 {
+    background: url('../../media/lvl2_interface.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
 .ice img {
     height: 45px;
     width: 145px;

@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import { NavLink } from "react-router-dom";
 
-const GameLayout = ({style}) => {
+const GameLayout2 = ({style}) => {
     const [code, setCode] = useState(``);
     const [lives, setLives] = useState([1,1,1]);
     const [time, setTime] = useState(0);
@@ -162,7 +162,7 @@ const GameLayout = ({style}) => {
            
         
             <div className='game-play-part-cont'>
-            <Header level={1} lives={lives} time={time}/>
+            <Header level={2} lives={lives} time={time}/>
                {gameStatus.finished &&  <div className='notification-cont'>
                 <p>FunCode</p>
                 <br/>
@@ -173,14 +173,14 @@ const GameLayout = ({style}) => {
                 }} style={{cursor:'pointer'}}>Click to start again</p>}
                {gameStatus.msg !== 'Try again' && <p>
                     <NavLink to={'/level2'}>
-                        Go to the lvl2
+                        Go to the lvl3
                     </NavLink>
                 </p>}
                 </div>
             
             }
-                <GameScreen style={{}}
-                    
+                 <GameScreen style={{}}
+                    bg={'level2'}
                 />
                 <br/>
                 <ControlLayoutMenu style={{}}
@@ -209,4 +209,4 @@ const GameLayout = ({style}) => {
 
 }
 
-export default GameLayout;
+export default GameLayout2;

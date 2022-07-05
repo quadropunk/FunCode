@@ -1,14 +1,16 @@
 import './GameScreen.css';
 
-const GameScreen = ({style}) => {
+const GameScreen = ({style, bg}) => {
     
 
 
     return (
-        <div className='game-screen-cont' style={style}>
+        <div className={'game-screen-cont ' + bg} style={style}>
             <div className='game-character' id="char">
                 <img src={require('../../media/main_char.png')} className="ices" alt="your character"/>
             </div>
+            {!bg && <>
+                
             <div className='game-ice-row1 ice'>
                 <img src={require('../../media/ice.PNG')} className="ices" alt="ice"/>
                 <img src={require('../../media/ice.PNG')} className="ices" alt="ice"/>
@@ -32,6 +34,9 @@ const GameScreen = ({style}) => {
             <div className='game-ice-row6 ice'>
                 <img src={require('../../media/ice.PNG')} className="ices" alt="ice"/>
             </div>
+            </>}
+            
+            
         </div>
     )
 }
