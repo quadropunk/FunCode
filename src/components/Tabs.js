@@ -79,7 +79,7 @@ function Tabs() {
           
 <div class="row">
     <div class ="column">
-              <img className="profile" src="https://play-lh.googleusercontent.com/CgZQvdfQWV9b4ZEHhLzL5ccXb_fd0dlu-6nJy-miyzXGJUSaUSpg76qxcSBz0AaRM8fG=w240-h480-rw" />
+    <img className="profile" src={require('./ava.png')} />
                   </div>
 <div class ="column">
     <div class="row">
@@ -155,7 +155,7 @@ function Tabs() {
               <div className="column" >
                   
               <div className="row" >
-                  <img src="https://play-lh.googleusercontent.com/CgZQvdfQWV9b4ZEHhLzL5ccXb_fd0dlu-6nJy-miyzXGJUSaUSpg76qxcSBz0AaRM8fG=w240-h480-rw" />
+                  <img src={require('./ava.png')} />
                       <p>My Character</p>
                   </div>
           <div className="row">

@@ -11,14 +11,14 @@ function Levels() {
           <ul className='cards__items'>
             <NavLink to={'level1'}>
               <Level
-                src='https://i.pinimg.com/originals/00/24/38/0024380c5c0fae1fedd49085bee7ab73.jpg'
+                src={require('../media/lvl1map.PNG')}
                 text='100/200 coins'
                 label='01'
               />
             </NavLink>
             <NavLink to={'level2'}>
               <Level
-                src='https://media.wired.com/photos/61d3854077dd73ac042d43cb/master/pass/Games-Celeste.jpg'
+                src={require('../media/lvl2map.PNG')}
                 text='500/500 coins'
                 label='02'
               />
