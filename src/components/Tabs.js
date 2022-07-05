@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Cards from './Cards';
 import Levels from './Levels';
+import { getUser, onConnect, onDisconnect } from "./web3/wallet";
 
 function Tabs() {
   const [toggleState, setToggleState] = useState(1);
@@ -9,6 +10,16 @@ function Tabs() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
+
+  const login = async () => {
+    await onConnect();
+    window.location.reload(false);
+  }
+
+  const logout = () => {
+    onDisconnect();
+    window.location.reload(false);
+  }
 
   return (
     <div className="container">
@@ -45,104 +56,107 @@ function Tabs() {
         >
           <h2>Settings</h2>
           <hr />
-              
+
           <div>
-              <p>
+            <p>
               Language
-              </p>
+            </p>
             <select>
               <option>English</option>
-                <option>Kazakh</option>
-              </select>
+              <option>Kazakh</option>
+            </select>
             <p>
               Proramming Language
-              </p>
+            </p>
             <select>
               <option>Python</option>
-              </select>
+            </select>
 
-        
-</div>
-<div>
-             <p>
+
+          </div>
+          <div>
+            <p>
               Music
-              </p>     
-                  <input type="range" min="1" max="10" id="size" value="3"></input>
-                  </div>
+            </p>
+            <input type="range" min="1" max="10" id="size" value="3"></input>
+          </div>
         </div>
 
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
           <h2>Profile</h2>
+          <button onClick={async () => getUser() === null ? await login() : logout()}>
+            {getUser() === null ? "Connect Wallet" : "Disconnect Wallet"}
+          </button>
           <hr />
-          
-<div class="row">
-    <div class ="column">
-    <img className="profile" src={require('./ava.png')} />
-                  </div>
-<div class ="column">
-    <div class="row">
-                  <p>Name</p></div>
-    <div class="row">
-                  <p>Surname</p></div>
-    <div class="row">
-                  <p>Nickname</p></div>
-    <div class="row">
-                  <p>Date of birth</p></div>
-              
-</div>
-        </div>
-<div>
-                      <p>Achievements</p>
-                      </div>
-<div class="row">
-    <div class="column">
-        <div class="round"></div>
-</div>
-<div class="column">
-        <div class="round"></div>
-</div>
-<div class="column">
-        <div class="round"></div>
-</div>
-<div class="column">
-        <div class="round"></div>
-</div>
-<div class="column">
-        <div class="round"></div>
-</div>
-    </div>
-<div class="row">
-    <div class="column">
-        <div class="round"></div>
-</div>
-<div class="column">
-        <div class="round"></div>
-</div>
-<div class="column">
-        <div class="round"></div>
-</div>
-<div class="column">
-        <div class="round"></div>
-</div>
-<div class="column">
-        <div class="round"></div>
-</div>
-    </div>
 
-</div>
+          <div className="row">
+            <div className="column">
+              <img className="profile" src={require('./ava.png')} />
+            </div>
+            <div className="column">
+              <div className="row">
+                <p>Name</p></div>
+              <div className="row">
+                <p>Surname</p></div>
+              <div className="row">
+                <p>Nickname</p></div>
+              <div className="row">
+                <p>Date of birth</p></div>
+
+            </div>
+          </div>
+          <div>
+            <p>Achievements</p>
+          </div>
+          <div className="row">
+            <div className="column">
+              <div className="round"></div>
+            </div>
+            <div className="column">
+              <div className="round"></div>
+            </div>
+            <div className="column">
+              <div className="round"></div>
+            </div>
+            <div className="column">
+              <div className="round"></div>
+            </div>
+            <div className="column">
+              <div className="round"></div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="column">
+              <div className="round"></div>
+            </div>
+            <div className="column">
+              <div className="round"></div>
+            </div>
+            <div className="column">
+              <div className="round"></div>
+            </div>
+            <div className="column">
+              <div className="round"></div>
+            </div>
+            <div className="column">
+              <div className="round"></div>
+            </div>
+          </div>
+
+        </div>
 
         <div
           className={toggleState === 3 ? "content  active-content" : "content"}
         >
           <h2>Map</h2>
           <hr />
-              <div>
-          <p>
-            Select level
-          </p></div>
-        <Levels />
+          <div>
+            <p>
+              Select level
+            </p></div>
+          <Levels />
         </div>
 
 
@@ -152,17 +166,17 @@ function Tabs() {
         >
           <h2>Shop</h2>
           <hr />
-              <div className="column" >
-                  
-              <div className="row" >
-                  <img src={require('./ava.png')} />
-                      <p>My Character</p>
-                  </div>
-          <div className="row">
+          <div className="column" >
+
+            <div className="row" >
+              <img src={require('./ava.png')} />
+              <p>My Character</p>
+            </div>
+            <div className="row">
               <Cards />
-              </div>
+            </div>
           </div>
-        
+
         </div>
       </div>
     </div>
