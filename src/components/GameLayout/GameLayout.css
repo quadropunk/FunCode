@@ -4,6 +4,7 @@
     width: 100%;
     min-width: 100%;
     display: flex;
+    background: white;
 }
 
 .game-play-part-cont {

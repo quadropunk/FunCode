@@ -5,6 +5,7 @@
     margin-left: 10%;
     display: flex;
     flex-direction: column;
+    background: white;
 }
 
 .hints-label-cont {
