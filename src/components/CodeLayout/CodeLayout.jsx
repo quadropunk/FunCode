@@ -1,18 +1,44 @@
-import BlueRadiusText from '../BlueRadiusText/BlueRadiusText';
+import { useState } from 'react';
+
 import './CodeLayout.css';
 
-const CodeLayout = ({saveCode, code}) => {
-    return (
-        <div className='code-layout'>
-            <BlueRadiusText>
-                Code:
-            </BlueRadiusText>
-            
-            <textarea id="editor" className='code-editor-cont' value={code}  onChange={(e) => {saveCode(e.target.value)}}>
-            
-            </textarea>
-        </div>
-    )
+// important to use these two packages
+import { CodeEditorEditable } from 'react-code-editor-editable'
+import 'highlight.js/styles/dracula.css';
+
+
+const CodeLayout = () => {
+    const [value, setValue] = useState('')
+
+      return (
+        <div className='center'>
+        <CodeEditorEditable
+          value={value}
+          setValue={setValue}
+          width='50vw'
+          height='50vh'
+          language='js'
+          inlineNumbers
+        />
+
+        <iframe
+          srcDoc={`<html>
+          <head></head>
+          <body>
+          <script>
+          ${value}
+          </script>
+          </body>
+          </html>
+          `}
+          title="output"
+          sandbox="allow-scripts"
+          frameBorder="1"
+          width="100%"
+          height="100%"
+        />
+      </div>
+      );
 }
 
 export default CodeLayout;
